@@ -1,0 +1,50 @@
+{
+  "editor.fontFamily": "Mononoki Nerd Font",
+  "editor.fontSize": 18,
+  "editor.fontLigatures": true,
+  "workbench.colorTheme": "Horizon",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right",
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  "window.menuBarVisibility": "toggle",
+  "workbench.activityBar.visible": false,
+
+  "terminal.integrated.fontFamily": "TerminessTTF Nerd Font",
+  "terminal.integrated.fontSize": 18,
+
+  "workbench.startupEditor": "none",
+  "window.dialogStyle": "custom",
+  "window.titleBarStyle": "custom",
+
+  "files.exclude": {
+    "**/dist": true,
+    "**/node_modules": true
+  },
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.fish": "bat"
+  },
+
+  "material-icon-theme.activeIconPack": "react_redux",
+
+  "workbench.editor.enablePreview": false,
+  "background.enabled": true,
+  "background.loop": false,
+  "background.useDefault": false,
+  "background.useFront": false,
+  "background.style": {
+    "height": "100%",
+    "z-index": "99999",
+    "margin-left": "900px",
+    "margin-top": "100px",
+    "background-position": "absolute",
+    "background-repeat": "no-repeat",
+    "background-size": "300px",
+    "opacity": 0.4
+  },
+  "background.customImages": ["/home/mash/.config/Code - OSS/User/okita.png"]
+}
