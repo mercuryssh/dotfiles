@@ -5,18 +5,20 @@
     "workbench.sideBar.location": "right",
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
+    "workbench.activityBar.visible": false,
+    "workbench.startupEditor": "none",
     
     /* Fonts */
     "editor.fontFamily": "Iosevka Nerd Font Mono",
     "editor.fontSize": 17,
     "editor.fontLigatures": true,
-    "terminal.integrated.fontFamily": "Iosevka Nerd Font Mono",
-    "workbench.activityBar.visible": false,
+    "terminal.integrated.fontFamily": "Mononoki Nerd Font Mono",
     
     /* Themes */
-    "workbench.colorTheme": "gruvboxConcoctis dark medium",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "none",
+
+    /* *Telemetry */
     "redhat.telemetry.enabled": false,
 
     /* Background Image */
