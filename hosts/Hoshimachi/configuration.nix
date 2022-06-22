@@ -89,7 +89,13 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nix = { trustedUsers = [ "root" "@wheel" ]; };
+  nix = {
+    package = pkgs.nixFlakes;
+    trustedUsers = [ "root" "@wheel" ];
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
 
   system.stateVersion = "22.05";
 }
