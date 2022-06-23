@@ -64,7 +64,15 @@
   };
 
   environment = {
-    systemPackages = with pkgs; [ gcc zsh git neovim wget unzip ];
+    systemPackages = with pkgs; [
+      gcc
+      zsh
+      git
+      neovim
+      wget
+      unzip
+      gnome.gnome-tweaks
+    ];
     defaultPackages = [ ];
     gnome.excludePackages = [
       pkgs.gnome.cheese
