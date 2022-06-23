@@ -111,7 +111,7 @@
     shell = pkgs.zsh;
     description = "Akiyama Joseph";
 
-    packages = with pkgs; [ firefox kitty vscode chromium ];
+    packages = with pkgs; [ firefox kitty vscode chromium gimp];
   };
 
   nixpkgs.config.allowUnfree = true;
