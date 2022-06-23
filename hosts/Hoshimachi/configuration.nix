@@ -54,7 +54,10 @@
       enable = true;
       libinput.enable = true;
       displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
+      desktopManager = {
+        xterm.enable = false;
+        gnome.enable = true;
+      };
     };
 
     openssh.enable = true;
@@ -62,6 +65,22 @@
 
   environment = {
     systemPackages = with pkgs; [ gcc zsh git neovim wget unzip ];
+    defaultPackages = [ ];
+    gnome.excludePackages = [
+      pkgs.gnome.cheese
+      pkgs.gnome-photos
+      pkgs.gnome.gnome-music
+      pkgs.gnome.gedit
+      pkgs.epiphany
+      pkgs.evince
+      pkgs.gnome.gnome-characters
+      pkgs.gnome.totem
+      pkgs.gnome.tali
+      pkgs.gnome.iagno
+      pkgs.gnome.hitori
+      pkgs.gnome.atomix
+      pkgs.gnome-tour
+    ];
     binsh = "${pkgs.dash}/bin/dash";
   };
 
