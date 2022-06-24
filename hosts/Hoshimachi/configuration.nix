@@ -29,6 +29,7 @@
   networking = {
     hostName = "Hoshimachi";
     networkmanager.enable = true;
+    dhcpcd.enable = false;
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -59,7 +60,6 @@
         gnome.enable = true;
       };
     };
-
     openssh.enable = true;
   };
 
@@ -111,7 +111,7 @@
     shell = pkgs.zsh;
     description = "Akiyama Joseph";
 
-    packages = with pkgs; [ firefox kitty vscode chromium gimp];
+    packages = with pkgs; [ firefox kitty vscode chromium gimp ];
   };
 
   nixpkgs.config.allowUnfree = true;
