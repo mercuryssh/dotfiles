@@ -13,7 +13,7 @@
       username = "mash";
       lib = nixpkgs.lib;
       pkgs = import nixpkgs {
-        inherit system; 
+        inherit system;
         config = { allowUnfree = true; }; # I Failed you rms
       };
     in {
@@ -24,8 +24,8 @@
           homeDirectory = "/home/${username}";
 
           configuration = { pkgs, config, ... }: {
+            imports = [ ./hosts/Hoshimachi/home.nix ];
             programs.home-manager.enable = true;
-            programs.htop.enable = true;
           };
         };
       nixosConfigurations = {
