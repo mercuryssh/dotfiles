@@ -2,8 +2,8 @@
   description = "My NixOS Config";
 
   inputs = {
-    home-manager.url = "github:nix-community/home-manager";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -13,18 +13,18 @@
       username = "mash";
       lib = nixpkgs.lib;
       pkgs = import nixpkgs {
-        inherit system;
+        inherit system; 
         config = { allowUnfree = true; }; # I Failed you rms
       };
     in {
       homeConfigurations.${username} =
         home-manager.lib.homeManagerConfiguration {
-          inherit system username;
+          inherit system username pkgs;
           stateVersion = "22.05";
           homeDirectory = "/home/${username}";
 
           configuration = { pkgs, config, ... }: {
-            programs.home-manager.enables = true;
+            programs.home-manager.enable = true;
             programs.htop.enable = true;
           };
         };
