@@ -30,6 +30,7 @@
             programs.home-manager.enable = true;
           };
         };
+
       nixosConfigurations = {
         Hoshimachi = nixpkgs.lib.nixosSystem {
           inherit system;
