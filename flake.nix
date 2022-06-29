@@ -12,24 +12,27 @@
   outputs = { self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
-      username = "mash";
-      lib = nixpkgs.lib;
       pkgs = import nixpkgs {
         inherit system;
         config = { allowUnfree = true; }; # I Failed you rms
       };
     in {
-      homeConfigurations.${username} =
-        home-manager.lib.homeManagerConfiguration {
-          inherit system username pkgs;
-          stateVersion = "22.05";
-          homeDirectory = "/home/${username}";
-
-          configuration = { pkgs, config, ... }: {
-            imports = [ ./hosts/Hoshimachi/home.nix ];
-            programs.home-manager.enable = true;
-          };
+      homeConfigurations = {
+        mash = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./modules/programs
+            {
+              home = {
+                username = "mash";
+                homeDirectory = "/home/mash";
+                stateVersion = "22.05";
+              };
+            }
+          ];
         };
+
+      };
 
       nixosConfigurations = {
         Hoshimachi = nixpkgs.lib.nixosSystem {

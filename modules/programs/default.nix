@@ -4,6 +4,7 @@
   home.packages = with pkgs; [ nodejs pkgs.nodePackages.pnpm ];
 
   programs = {
+    home-manager.enable = true;
     htop.enable = true;
     emacs.enable = true;
     vivaldi.enable = true;
