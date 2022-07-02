@@ -9,35 +9,28 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        config = { allowUnfree = true; }; # I Failed you rms
+        config = {
+          allowUnfree = true; # I Failed you rms
+        };
       };
     in {
-      homeConfigurations = {
-        mash = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./modules/programs
-            {
-              home = {
-                username = "mash";
-                homeDirectory = "/home/mash";
-                stateVersion = "22.05";
-              };
-            }
-          ];
-        };
-
-      };
-
       nixosConfigurations = {
         Hoshimachi = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/Hoshimachi/configuration.nix ];
+          modules = [
+            ./hosts/Hoshimachi/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.mash = import ./hosts/Hoshimachi/home.nix;
+            }
+          ];
         };
       };
 
