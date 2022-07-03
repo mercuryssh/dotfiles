@@ -92,6 +92,13 @@
     binsh = "${pkgs.dash}/bin/dash";
   };
 
+  users.users.mash = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ];
+    shell = pkgs.zsh;
+    description = "Akiyama Joseph";
+  };
+
   programs = {
     zsh = {
       enable = true;
@@ -103,15 +110,6 @@
       enable = true;
       enableSSHSupport = true;
     };
-  };
-
-  users.users.mash = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-    shell = pkgs.zsh;
-    description = "Akiyama Joseph";
-
-    packages = with pkgs; [ firefox kitty vscode chromium gimp ];
   };
 
   nixpkgs.config.allowUnfree = true;

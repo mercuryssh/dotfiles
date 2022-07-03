@@ -1,14 +1,21 @@
 { config, pkgs, ... }:
 
 {
-
   home = {
     username = "mash";
     homeDirectory = "/home/mash";
     stateVersion = "22.05";
 
-    packages = with pkgs; [ nodejs pkgs.nodePackages.pnpm python ];
-
+    packages = with pkgs; [
+      nodejs
+      pkgs.nodePackages.pnpm
+      python
+      gnupg
+      firefox
+      kitty
+      vscode
+      gimp
+    ];
   };
 
   programs = {
