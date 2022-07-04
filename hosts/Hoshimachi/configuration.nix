@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     #
     ../../modules/system/boot.nix
+    ../../modules/system/sound.nix
   ];
 
   networking = {
@@ -18,10 +19,6 @@
     font = "Lat2-Terminus16";
     keyMap = "us";
   };
-
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
 
   services = {
     xserver = {
