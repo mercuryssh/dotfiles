@@ -5,7 +5,9 @@
     ./hardware-configuration.nix
     #
     ../../modules/system/boot.nix
+    ../../modules/system/fonts.nix
     ../../modules/system/sound.nix
+    ../../modules/system/xorg.nix
   ];
 
   networking = {
@@ -15,31 +17,8 @@
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
-  };
 
-  services = {
-    xserver = {
-      enable = true;
-      libinput.enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager = {
-        xterm.enable = false;
-        gnome.enable = true;
-      };
-    };
-
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-
-    openssh.enable = true;
-  };
+  services.openssh.enable = true;
 
   environment = {
     systemPackages = with pkgs; [
