@@ -1,31 +1,12 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    #
+    ../../modules/system/boot.nix
   ];
 
-  boot = {
-    loader = {
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
-      };
-
-      grub = {
-        efiSupport = true;
-        device = "nodev";
-      };
-    };
-
-    kernelPackages = pkgs.linuxPackages_latest;
-  };
-
-  time.timeZone = "America/Santo_Domingo";
   networking = {
     hostName = "Hoshimachi";
     networkmanager.enable = true;
@@ -41,14 +22,6 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-  };
 
   services = {
     xserver = {
@@ -60,6 +33,14 @@
         gnome.enable = true;
       };
     };
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+
     openssh.enable = true;
   };
 
@@ -111,8 +92,6 @@
       enableSSHSupport = true;
     };
   };
-
-  nixpkgs.config.allowUnfree = true;
 
   nix = {
     package = pkgs.nixFlakes;

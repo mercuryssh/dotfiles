@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -21,7 +21,7 @@
     in {
       nixosConfigurations = {
         Hoshimachi = nixpkgs.lib.nixosSystem {
-          inherit system;
+          inherit system pkgs;
           modules = [
             ./hosts/Hoshimachi/configuration.nix
             home-manager.nixosModules.home-manager
