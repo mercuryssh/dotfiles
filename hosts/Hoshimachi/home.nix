@@ -10,7 +10,6 @@
       nodejs
       pkgs.nodePackages.pnpm
       python
-      firefox
       kitty
       vscode
       gimp
@@ -21,7 +20,7 @@
     home-manager.enable = true;
     htop.enable = true;
     emacs.enable = true;
-    vivaldi.enable = true;
+    google-chrome.enable = true;
 
     git = {
       enable = true;
