@@ -10,7 +10,6 @@
       nodejs
       pkgs.nodePackages.pnpm
       python
-      gnupg
       firefox
       kitty
       vscode
