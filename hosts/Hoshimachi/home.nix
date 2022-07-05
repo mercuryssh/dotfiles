@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../modules/shell
     ../../modules/dev/nodejs.nix
     ../../modules/dev/python.nix
     ../../modules/programs/kitty.nix
