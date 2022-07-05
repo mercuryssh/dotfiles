@@ -1,7 +1,11 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = [ ../../modules/dev/nodejs.nix ../../modules/dev/python.nix ];
+  imports = [
+    ../../modules/dev/nodejs.nix
+    ../../modules/dev/python.nix
+    ../../modules/programs/kitty.nix
+  ];
 
   home = {
     username = "mash";
@@ -16,6 +20,7 @@
       python.enable = true;
       nodejs.enable = true;
     };
+    programs = { kitty.enable = true; };
   };
 
   programs = {
