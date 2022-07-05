@@ -13,6 +13,7 @@
       kitty
       vscode
       gimp
+      papirus-icon-theme
     ];
   };
 
