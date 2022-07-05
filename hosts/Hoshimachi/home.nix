@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
+  imports = [ ../../modules/dev/python.nix ];
+
   home = {
     username = "mash";
     homeDirectory = "/home/mash";
@@ -9,13 +11,14 @@
     packages = with pkgs; [
       nodejs
       pkgs.nodePackages.pnpm
-      python
       kitty
       vscode
       gimp
       papirus-icon-theme
     ];
   };
+  
+  modules = { dev = { python.enable = true; }; };
 
   programs = {
     home-manager.enable = true;
