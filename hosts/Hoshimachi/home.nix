@@ -3,9 +3,9 @@
 {
   imports = [
     ../../modules/shell
+    ../../modules/programs/kitty
     ../../modules/dev/nodejs.nix
     ../../modules/dev/python.nix
-    ../../modules/programs/kitty.nix
   ];
 
   home = {

@@ -3,6 +3,7 @@
 with lib;
 let cfg = config.modules.programs.kitty;
 in {
+  imports = [ ./themes/vitesse-dark-soft.nix];
   options.modules.programs.kitty = { enable = mkEnableOption false; };
 
   config = mkIf cfg.enable {
@@ -19,6 +20,7 @@ in {
         tab_bar_style = "fade";
         hide_window_decorations = "yes";
         adjust_line_height = "0";
+        background_opacity = "0.9";
       };
     };
   };
