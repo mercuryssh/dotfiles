@@ -1,6 +1,8 @@
 { config, pkgs, libs, ... }:
 
 {
+  imports = [ ./zsh.nix ];
+
   home.packages = with pkgs; [ neofetch ];
 
   programs = {
@@ -21,9 +23,7 @@
         signByDefault = true;
       };
 
-      extraConfig = {
-        core.editor = "nvim";
-      };
+      extraConfig = { core.editor = "nvim"; };
     };
   };
 

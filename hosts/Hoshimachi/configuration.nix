@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     #
     ../../modules/system/boot.nix
+    ../../modules/system/env.nix
     ../../modules/system/fonts.nix
     ../../modules/system/sound.nix
     ../../modules/system/xorg.nix
@@ -19,35 +20,6 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.openssh.enable = true;
-
-  environment = {
-    systemPackages = with pkgs; [
-      gcc
-      zsh
-      git
-      neovim
-      wget
-      unzip
-      gnome.gnome-tweaks
-    ];
-    defaultPackages = [ ];
-    gnome.excludePackages = [
-      pkgs.gnome.cheese
-      pkgs.gnome-photos
-      pkgs.gnome.gnome-music
-      pkgs.gnome.gedit
-      pkgs.epiphany
-      pkgs.evince
-      pkgs.gnome.gnome-characters
-      pkgs.gnome.totem
-      pkgs.gnome.tali
-      pkgs.gnome.iagno
-      pkgs.gnome.hitori
-      pkgs.gnome.atomix
-      pkgs.gnome-tour
-    ];
-    binsh = "${pkgs.dash}/bin/dash";
-  };
 
   users.users.mash = {
     isNormalUser = true;
