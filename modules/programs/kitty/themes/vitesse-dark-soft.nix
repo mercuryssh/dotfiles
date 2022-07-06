@@ -15,8 +15,8 @@
     color8 = "#393a34";
 
     # red
-    color1 = "#393a34";
-    color9 = "#393a34";
+    color1 = "#cb7676";
+    color9 = "#cb7676";
 
     # green
     color2 = "#4d9375";
