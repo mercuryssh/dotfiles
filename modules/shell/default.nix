@@ -1,8 +1,6 @@
 { config, pkgs, libs, ... }:
 
 {
-  imports = [ ./zsh.nix ];
-
   home.packages = with pkgs; [ neofetch ];
 
   programs = {
@@ -30,5 +28,7 @@
   home.file = {
     ".config/neofetch".source =
       config.lib.file.mkOutOfStoreSymlink ../../config/neofetch;
+
+    ".config/zsh".source = config.lib.file.mkOutOfStoreSymlink ../../config/zsh;
   };
 }
