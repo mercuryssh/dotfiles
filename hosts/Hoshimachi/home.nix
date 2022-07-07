@@ -13,7 +13,7 @@
     homeDirectory = "/home/mash";
     stateVersion = "22.05";
 
-    packages = with pkgs; [ kitty vscode gimp papirus-icon-theme ];
+    packages = with pkgs; [ kitty vscode gimp papirus-icon-theme gtypist ];
   };
 
   modules = {
