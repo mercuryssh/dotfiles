@@ -9,4 +9,7 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
+
+# Basic auto/cd
+setopt auto_cd
 eval "$(starship init zsh)"
