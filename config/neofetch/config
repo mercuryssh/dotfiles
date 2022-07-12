@@ -1,30 +1,17 @@
-#! /bin/sh
-
 # See this wiki page for more info:
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 print_info() {
-    info "" model
-    info "" distro
-    info "" kernel
-    info "" shell
-    info "" theme
-    info "" term
-    info "" term_font
-    info "﬙" cpu
-    info "" song
+    info "💻 host" model
+    info "🤘🏻 distro" distro
+    info "🐧 kernel" kernel
+    info "🐚 shell" shell
+    info "🎨 gtk theme" theme
+    info "🐱 term" term
+    info "ツ font" term_font
+    info "🔥 cpu" cpu
+    info "🎶" song
 
     [[ $player ]] && prin "Music Player" "$player"
-    # info "GPU Driver" gpu_driver  # Linux/macOS only
-    # info "CPU Usage" cpu_usage
-    # info "Disk" disk
-    # info "Battery" battery
-    # info "Font" font
-    # info "Song" song
-    # info "Local IP" local_ip
-    # info "Public IP" public_ip
-    # info "Users" users
-    # info "Locale" locale  # This only works on glibc systems.
-
     info cols
 }
 
