@@ -40,7 +40,7 @@ in
 
         # workbench
         "workbench.editor.enablePreview" = false;
-        "workbench.colorTheme" = "Vitesse Dark";
+        "workbench.colorTheme" = "GitHub Dark";
         "workbench.iconTheme" = "file-icons";
         "workbench.productIconTheme" = "icons-carbon";
         "workbench.startupEditor" = "none";
