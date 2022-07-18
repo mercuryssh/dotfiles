@@ -7,6 +7,8 @@ in
   options.modules.programs.vscode = { enable = mkEnableOption false; };
 
   config = mkIf cfg.enable {
+    home.file.".config/Code/Keqing_1.webp".source = ../../../assets/icons/Keqing_1.webp;
+
     programs.vscode = {
       enable = true;
       # package = pkgs.vscodium;
@@ -84,7 +86,7 @@ in
         "background.useDefault" = false;
         "background.useFront" = false;
         "background.customImages" = [
-          "/home/mash/Pictures/Icons/Hu_Tao_Reciting_poetry.webp"
+          "/home/mash/.config/Code/Keqing_1.webp"
         ];
         "background.style" = {
           "height" = "100%";
