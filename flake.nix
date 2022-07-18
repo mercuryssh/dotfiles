@@ -18,7 +18,8 @@
           allowUnfree = true; # I Failed you rms
         };
       };
-    in {
+    in
+    {
       nixosConfigurations = {
         Hoshimachi = nixpkgs.lib.nixosSystem {
           inherit system pkgs;
