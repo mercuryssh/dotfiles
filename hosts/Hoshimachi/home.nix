@@ -4,6 +4,7 @@
   imports = [
     ../../modules/shell
     ../../modules/programs/kitty
+    ../../modules/programs/vscode
     ../../modules/dev/nodejs.nix
     ../../modules/dev/python.nix
   ];
@@ -13,7 +14,7 @@
     homeDirectory = "/home/mash";
     stateVersion = "22.05";
 
-    packages = with pkgs; [ kitty vscode gimp papirus-icon-theme gtypist osu-lazer];
+    packages = with pkgs; [ kitty gimp papirus-icon-theme gtypist osu-lazer ];
   };
 
   modules = {
@@ -21,7 +22,10 @@
       python.enable = true;
       nodejs.enable = true;
     };
-    programs = { kitty.enable = true; };
+    programs = {
+      kitty.enable = true;
+      vscode.enable = true;
+    };
   };
 
   programs = {
