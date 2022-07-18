@@ -30,7 +30,6 @@
 
   programs = {
     home-manager.enable = true;
-    htop.enable = true;
     emacs.enable = true;
     google-chrome.enable = true;
   };

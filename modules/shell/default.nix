@@ -4,6 +4,7 @@
   home.packages = with pkgs; [ neofetch ];
 
   programs = {
+    htop.enable = true;
     starship = {
       enable = true;
       settings.character.success_symbol = "[➜](bold green)";
