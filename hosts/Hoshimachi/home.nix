@@ -5,6 +5,7 @@
     ../../modules/shell
     ../../modules/programs/kitty
     ../../modules/programs/vscode
+    ../../modules/programs/brave
     ../../modules/dev/nodejs.nix
     ../../modules/dev/python.nix
   ];
@@ -25,6 +26,7 @@
     programs = {
       kitty.enable = true;
       vscode.enable = true;
+      brave.enable = true;
     };
   };
 
