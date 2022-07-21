@@ -15,7 +15,7 @@
     homeDirectory = "/home/mash";
     stateVersion = "22.05";
 
-    packages = with pkgs; [ kitty gimp papirus-icon-theme gtypist osu-lazer ];
+    packages = with pkgs; [ kitty gimp papirus-icon-theme gtypist osu-lazer spotify ];
   };
 
   modules = {
