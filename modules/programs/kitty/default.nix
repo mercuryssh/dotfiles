@@ -3,7 +3,7 @@
 with lib;
 let cfg = config.modules.programs.kitty;
 in {
-  imports = [ ./themes/vitesse-dark-soft.nix];
+  imports = [ ./themes/stellar.nix];
   options.modules.programs.kitty = { enable = mkEnableOption false; };
 
   config = mkIf cfg.enable {
