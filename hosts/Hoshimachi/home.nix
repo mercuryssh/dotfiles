@@ -33,6 +33,5 @@
   programs = {
     home-manager.enable = true;
     emacs.enable = true;
-    google-chrome.enable = true;
   };
 }
