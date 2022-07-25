@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     #
     ../../modules/system/boot.nix
@@ -43,21 +44,23 @@
       gnome.gnome-tweaks
     ];
 
-    gnome.excludePackages = [
-      pkgs.gnome.cheese
-      pkgs.gnome-photos
-      pkgs.gnome.gnome-music
-      pkgs.gnome.gedit
-      pkgs.epiphany
-      pkgs.evince
-      pkgs.gnome.gnome-characters
-      pkgs.gnome.totem
-      pkgs.gnome.tali
-      pkgs.gnome.iagno
-      pkgs.gnome.hitori
-      pkgs.gnome.atomix
-      pkgs.gnome-tour
-    ];
+    gnome.excludePackages = (with pkgs; [
+      gnome-photos
+      gnome-tour
+    ]) ++ (with pkgs.gnome; [
+      cheese
+      gnome-music
+      gnome-terminal
+      gedit
+      epiphany
+      geary
+      evince
+      totem
+      tali
+      iagno
+      hitori
+      atomix
+    ]);
   };
 
   services.openssh.enable = true;
