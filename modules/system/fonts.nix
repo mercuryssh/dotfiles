@@ -1,21 +1,23 @@
 { config, pkgs, ... }:
 
 {
-  fonts.fonts = with pkgs; [
-    cascadia-code
-    jetbrains-mono
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    (nerdfonts.override { fonts = [ "CascadiaCode" "JetBrainsMono" "Iosevka" "Mononoki" ]; })
-  ];
+  fonts = {
+    fonts = with pkgs; [
+      cascadia-code
+      jetbrains-mono
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      (nerdfonts.override { fonts = [ "CascadiaCode" "JetBrainsMono" "Mononoki" ]; })
+    ];
 
-  fonts.fontconfig = {
-    defaultFonts = {
-      monospace = [ "CascadiaCode" ];
-      sansSerif = [ "CascadiaCode" ];
-      serif = [ "CascadiaCode" ];
-      emoji = [ "Noto Fonts Emoji" ];
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "CaskaydiaCove Nerd Font Mono" ];
+        sansSerif = [ "CaskaydiaCove Nerd Font" ];
+        serif = [ "CaskaydiaCove Nerd Font" ];
+        emoji = [ "Noto Fonts Emoji" ];
+      };
     };
   };
 
